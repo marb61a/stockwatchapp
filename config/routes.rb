@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'watchlist/index'
+  scope :api do
+    resources :stocks, only: [:index], defaults: {format: :json}
+  end
   root 'watchlist#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
