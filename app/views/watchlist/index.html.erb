@@ -1,6 +1,18 @@
+<h1>Stocks To Watch</h1>
+<p>Blah blah spiel</p>
+<p>Blah blah spiel</p>
+<p>Blah blah spiel</p>
+<p>Blah blah spiel</p>
+
 <form>
   <input type="text" ng-model='newSymbol' placeholder="Enter a symbol">
   <input type="submit" value="Add">
 </form>
-{{ newSymbol }}
+<div ng-controller="StocksCtrl">
+  <ul>
+    <li ng-repeat="stock in stocks">
+      {{stock.symbol}}, {{stock.name}}
+    </li>
+  </ul>
+</div>
 
