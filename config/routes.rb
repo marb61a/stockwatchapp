@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   scope :api do
-    resources :stocks, only: [:index], defaults: {format: :json}
+    resources :stocks, defaults: {format: :json}
   end
   root 'watchlist#index'
 
