@@ -3,14 +3,15 @@
     <h1>Stocks To Watch</h1>
   </div>
 
-  <form>
-    <input type="text" ng-model='newSymbol' placeholder="Enter a symbol">
-    <input type="submit" value="Add">
-  </form>
   <div ng-controller="StocksCtrl">
+   <form ng-submit="createStock()">
+      <input type="text" ng-model='newSymbol' placeholder="Enter a symbol">
+      <input type="submit" value="Add">
+    </form>
     <ul>
       <li ng-repeat="stock in stocks">
         {{stock.symbol}}, {{stock.name}}
+        <a href="deleteStock(stock id, $index)"></a>
       </li>
     </ul>
   </div>
