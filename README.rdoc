@@ -1,28 +1,17 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is an Angular & Rails Example App
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+It is based on the tutorial written by Alex Potrykus and its url is at
+
+http://alexpotrykus.com/blog/2013/12/07/angularjs-with-rails-4-part-1/
+
+There are changes as the tutorial is 2 years old and 
+there are different versions of technologies involved
+
+- Rails 4.1.1
+- Angularjs-rails
+- Bootstrap\ Bootstrap-Sass
+
+The project itself is developed on Nitrous.io
+
+Are some of the technologies involved
