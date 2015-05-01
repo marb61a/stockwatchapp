@@ -1,6 +1,6 @@
 <div class="container">
   <div class="jumbotron text-center">
-    <h1>Stocks To Watch</h1>
+    <h1 style="color:white">Stocks To Watch</h1>
   </div>
 
   <div ng-controller="StocksCtrl">
@@ -9,9 +9,12 @@
       <input type="submit" value="Add">
     </form>
     <ul>
+      <div ng-show="error">
+        Please try later, the Yahoo Finance API is experiencing difficulties
+      </div>
       <li ng-repeat="stock in stocks">
-        {{stock.symbol}}, {{stock.name}}
-        <a href="deleteStock(stock id, $index)"></a>
+        {{stock.symbol}}, {{stock.name}}, {{stock.bid}}, {{stock.ask}}, {{stock.year_low}}, {{stock.year_high}}
+        <a href='' ng-click="deleteStock(stock id, $index)">Delete</a>
       </li>
     </ul>
   </div>
