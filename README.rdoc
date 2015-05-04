@@ -12,6 +12,7 @@ there are different versions of technologies involved
 - Angularjs-rails
 - Bootstrap\ Bootstrap-Sass
 
+
 The project itself is developed on Nitrous.io
 
 Are some of the technologies involved
