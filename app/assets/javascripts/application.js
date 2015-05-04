@@ -12,12 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require select2
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require angular
 //= require angular-resource
-//= require angular-ui-select2
+//= require angular-ui-select
 //= require main.js
 //= require_tree ./angular
 //= require_tree .
