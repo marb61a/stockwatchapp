@@ -8,6 +8,19 @@ app.controller('StocksCtrl', ['$scope', 'Stock', '$filter', '$http', function($s
   $scope.stocks = Stock.all();
   $scope.error = false;
   
+  $scope.select2Options = {
+    // add options here
+  };
+  
+  $scope.stocklist = [{symbol: "AAPL", name: "Apple Inc"},
+                      {symbol: "MSFT", name: "Microsoft Inc"}]
+  
+  $scope.$watch('newCompany', function() {
+    if ($scope.newCompany != "" && $scope.newCompany != null) {
+      $scope.createStock();
+    }
+  });
+
   $scope.createStock = function(){
     var attr = {};
     attr.symbol = $filter('uppercase')($scope.newSymbol);
@@ -20,9 +33,11 @@ app.controller('StocksCtrl', ['$scope', 'Stock', '$filter', '$http', function($s
        attr.year_high = data.query.results.quote["YearHigh"];
        var newStock = Stock.create(attr);
        $scope.stocks.push(newStock);
+       $scope.newCompany = "";
        $scope.newSymbol = "";
-    }).error(function(){
+    }).error(function(data, status, headers, config){
         $scope.error = true;
+        $scope.loading = false;
     });
   };
   

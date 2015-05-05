@@ -1,1 +1,1 @@
-var app = angular.module("StockWatchApp", ['ngResource', 'ui.select']);
+var app = angular.module("StockWatchApp", ['ngResource', 'ui.select2']);
