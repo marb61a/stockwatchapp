@@ -17,6 +17,7 @@
 //= require angular
 //= require angular-resource
 //= require angular-ui-select
+//= require angular-ui-select2
 //= require main.js
 //= require_tree ./angular
 //= require_tree .

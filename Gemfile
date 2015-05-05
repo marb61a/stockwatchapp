@@ -30,7 +30,8 @@ gem 'angularjs-rails'
 
 gem 'bootstrap-sass', '~> 3.3.4'
 
-gem 'angular-ui-select-rails', '~> 0.9.6'
+gem 'angular-ui-select-rails'
+gem 'angular-ui-select2-rails'
 
 
 # Use ActiveModel has_secure_password
