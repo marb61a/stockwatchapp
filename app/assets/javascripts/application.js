@@ -19,6 +19,8 @@
 //= require angular-ui-select
 //= require angular-ui-select2
 //= require main.js
+//= require highstock
+//= require highstock/highcharts-more
 //= require_tree ./angular
 //= require_tree .
 
