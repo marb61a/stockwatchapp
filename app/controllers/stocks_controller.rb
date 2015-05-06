@@ -9,6 +9,10 @@ class StocksController < ApplicationController
     respond_with Stock.create(stock_params)
   end
   
+  def update
+    respond_with Stock.find(params[:id]).update_attributes(stock_params)
+  end
+  
   def destroy
     respond_with Stock.destroy(params[:id])
   end
