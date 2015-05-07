@@ -25,8 +25,11 @@
          <span>Year Low:</span>,
          <span>Year High:</span>,
        <div id='links'>
-        <a href='' ng-click="updateStock(stock.id, $index)">Update</a>
-        <a href='' ng-click="deleteStock(stock.id, $index)" id='delete'>Delete</a>
+         Show Chart: <input type="checkbox" ng-model="showStockChart">
+         <a href='' ng-click="updateStock(stock.id, $index)">Update</a>
+         <a href='' ng-click="deleteStock(stock.id, $index)" id='delete'>Delete</a>
+       </div>
+       <div my-chart ng-show="showStockChart">
        </div>
       </li>
     </ul>
