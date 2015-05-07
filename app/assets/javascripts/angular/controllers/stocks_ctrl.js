@@ -70,6 +70,10 @@ app.controller('StocksCtrl', ['$scope', 'Stock', '$filter', '$http', '$q', funct
     return Stock.delete(id);
   };
   
+  $scope.requestOHLC = function (stockid) {
+    return Stock.ohlc(stockid);
+  }
+  
 }]);
 
   

@@ -4,24 +4,43 @@ app.directive("myChart", function() {
     link: function(scope, element, attrs) {
       scope.$watch('showStockChart', function() {
         if (scope.showStockChart == true) {
-          // show chart
-          element.highcharts({
-            chart: {
-              type: 'area'
-            },
-            series: [{
-              name: 'John',
-              data: [5, 3, 4, 7, 2]
-            }, {
-              name: 'Jane',
-              data: [2, -2, -3 , 2, 1]
-            }, {
-              name: 'Joe',
-              data: [3, 4, 4, -2, 5]
-            }]
+          scope.loadingChart = true;
+          var ohlc = [];
+          scope.requestOHLC(scope.$eval(attrs.stockid)).$promise.then(function(res){
+            ohlc = res.ohlc;
+            angular.forEach(ohlc, function(value, index) {
+              ohlc[index][0] = Date.parse(value[0]);
+            });
+            element.highcharts('StockChart', {
+              rangeSelector: {
+                selected: 2
+              },
+              title: {
+                text: scope.$eval(attrs.stockname)
+              },
+              xAxis: {
+                type: 'datetime'
+              },
+              series: [{
+                type: 'candlestick',
+                name: scope.$eval(attrs.stocksymbol),
+                data: ohlc,
+                dataGrouping: {
+                  units: [[
+                         'day',
+                         [1]
+                  ], [
+                         'week',
+                         [1]
+                  ], [
+                         'month',
+                         [1,2,3,4,6]
+                  ]]
+                }
+              }]
+            });
           });
-        } else {
-          // delete chart
+          scope.loadingChart = false;
         }
       });
     }

@@ -19,6 +19,10 @@ app.factory('Stock', ['$resource', function($resource) {
     return this.service.update(attr);
   };
   
+  Stock.prototype.ohlc = function(stId) {
+    return $resource('/api/stocks/:stockId/ohlc', {stockId: '@id'}).get({stockId: stId});
+  }
+  
   return new Stock;
 }]);
 

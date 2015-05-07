@@ -2,24 +2,25 @@
   <div class="jumbotron text-center">
     <h1 style="color:white">Stocks To Watch</h1>
   </div>
-
   <div ng-controller="StocksCtrl">
-   <form ng-submit="createStock()">
+   <form>
       <select ui-select2='select2Options' ng-model='newCompany', data-placeholder="Enter the name of a listed company", ng-required="true">
         <option value=""></option>
         <option ng-repeat="stock in stocklist" value=""></option>
       </select>
      <input type="submit" value="Add">
-    </form>
+   </form>
     <ul>
       <div ng-show="error">
         Please try later, the Yahoo Finance API is experiencing difficulties
       </div>
       <li ng-repeat="stock in stocks">
-       <div id="symbol">
-       </div>
-       <div id="name">
-       </div>
+        <div id='symbol'>
+          {{stock.symbol}}
+        </div>
+        <div id='name'>
+          {{stock.name}}
+        </div>
          <span>Bid:</span>,
          <span>Ask:</span>,
          <span>Year Low:</span>,
@@ -29,18 +30,13 @@
          <a href='' ng-click="updateStock(stock.id, $index)">Update</a>
          <a href='' ng-click="deleteStock(stock.id, $index)" id='delete'>Delete</a>
        </div>
-       <div my-chart ng-show="showStockChart">
-       </div>
+       <div my-chart stockid="stock.id" stocksymbol="stock.symbol" stockname="stock.name" ng-show="showStockChart" id='chart' style='padding-            right: 30px; padding-left: 20px;padding-top: 15px;'>
+         <div id='loading_chart'>
+          Loading Chart ....
+         </div>
+      </div>
       </li>
     </ul>
   </div>
 </div>
-<ul>
 
-        
-     
-   
- 
-
-
-    
