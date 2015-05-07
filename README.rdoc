@@ -11,7 +11,7 @@ there are different versions of technologies involved
 - Rails 4.1.1
 - Angularjs-rails
 - Bootstrap\ Bootstrap-Sass
-- Select 2 has been deprecated and replaced with ui-select & ui-select2, ui-select has gem available
+- ui-select2 has been deprecated and replaced with ui-select, select2 % ui-select have gems available
 - Highstock also has gem available and is free for personal use under MIT licence
 
 The project itself is developed on Nitrous.io

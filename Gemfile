@@ -31,7 +31,7 @@ gem 'angularjs-rails'
 gem 'bootstrap-sass', '~> 3.3.4'
 
 gem 'angular-ui-select-rails'
-gem 'angular-ui-select2-rails'
+gem 'select2-rails', '~> 3.5.9.3'
 
 gem 'highstock-rails'
 

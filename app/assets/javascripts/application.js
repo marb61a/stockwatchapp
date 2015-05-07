@@ -11,16 +11,13 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
 //= require bootstrap-sprockets
-//= require turbolinks
+//= require select2
 //= require angular
 //= require angular-resource
 //= require angular-ui-select
-//= require angular-ui-select2
-//= require main.js
 //= require highstock
-//= require highstock/highcharts-more
+//= require main.js
 //= require_tree ./angular
 //= require_tree .
 

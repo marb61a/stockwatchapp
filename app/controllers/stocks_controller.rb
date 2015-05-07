@@ -22,8 +22,9 @@ class StocksController < ApplicationController
   
   def ohlc
     stock = Stock.find(params[:stock_id])
-    url = URI::parse "http://ichart.finance.yahoo.com/table.csv?s=" + stock.symbol + "&c=1962"
+    url = URI::parse "http://ichart.finance.yahoo.com/table.csv?s=" + stock.symbol + "&c=1962" 
     req = Net::HTTP::get(url).gsub /"/, ''
+
     csv_format = CSV.parse(req, {converters: :numeric})
     csv_format = csv_format.drop(1)
     data = []
@@ -39,13 +40,11 @@ class StocksController < ApplicationController
     result = { "ohlc" => data }
     respond_with result
   end
-    
-  end
-  
+
   private
-  def stock_params
-    params.require(:stock).permit(:symbol, :name, :bid, :ask, :year_low, :year_high)
-  end
+    def stock_params
+      params.require(:stock).permit(:id, :symbol, :name, :bid, :ask, :year_low, :year_high)
+    end
 end
 
 

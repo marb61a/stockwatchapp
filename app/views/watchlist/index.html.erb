@@ -4,16 +4,15 @@
   </div>
   <div ng-controller="StocksCtrl">
    <form>
-      <select ui-select2='select2Options' ng-model='newCompany', data-placeholder="Enter the name of a listed company", ng-required="true">
-        <option value=""></option>
-        <option ng-repeat="stock in stocklist" value=""></option>
-      </select>
-     <input type="submit" value="Add">
+     <input type='hidden' ui-select2='select2Options' ng-model='newCompany' data-placeholder="Enter the name of a listed company", ng-                  required="true">
    </form>
-    <ul>
-      <div ng-show="error">
+   <div ng-show="error">
         Please try later, the Yahoo Finance API is experiencing difficulties
-      </div>
+   </div>
+   <div ng-show="loading" id="loading">
+    Loading, please wait!
+   </div>
+    <ul>
       <li ng-repeat="stock in stocks">
         <div id='symbol'>
           {{stock.symbol}}
@@ -26,14 +25,14 @@
          <span>Year Low:</span>,
          <span>Year High:</span>,
        <div id='links'>
-         Show Chart: <input type="checkbox" ng-model="showStockChart">
-         <a href='' ng-click="updateStock(stock.id, $index)">Update</a>
-         <a href='' ng-click="deleteStock(stock.id, $index)" id='delete'>Delete</a>
+        Show Chart: <input type="checkbox" ng-model="showStockChart">
+        <a href='' ng-click="updateStock(stock.id, $index)">Update</a>
+        <a href='' ng-click="deleteStock(stock.id, $index)" id='delete'>Delete</a>
        </div>
-       <div my-chart stockid="stock.id" stocksymbol="stock.symbol" stockname="stock.name" ng-show="showStockChart" id='chart' style='padding-            right: 30px; padding-left: 20px;padding-top: 15px;'>
-         <div id='loading_chart'>
-          Loading Chart ....
-         </div>
+       <div my-chart stockid="stock.id" stocksymbol="stock.symbol" stockname="stock.name" ng-show="showStockChart" id='chart' style='padding-           right: 30px; padding-left: 20px;padding-top: 15px;'>
+        <div id='loading_chart'>
+          Loading Chart, this might take a while!
+        </div>
       </div>
       </li>
     </ul>

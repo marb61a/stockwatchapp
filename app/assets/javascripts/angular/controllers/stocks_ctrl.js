@@ -9,17 +9,24 @@ app.controller('StocksCtrl', ['$scope', 'Stock', '$filter', '$http', '$q', funct
   $scope.error = false;
   
   $scope.select2Options = {
-    // add options here
+    'ajax': {
+      url: "/api/derivatives.json",
+      dataType: 'json',
+      data: function(term, page) {
+        return { q: term }; 
+      },
+      results: function(data, page) {
+        return { results: data };
+      }
+    }
   };
-  
-  $scope.stocklist = [{symbol: "AAPL", name: "Apple Inc"},
-                      {symbol: "MSFT", name: "Microsoft Inc"}]
   
   $scope.$watch('newCompany', function() {
     if ($scope.newCompany != "" && $scope.newCompany != null) {
       $scope.createStock();
     }
   });
+  
 
   // Added $q to controller to handle promises
   $scope.fetchYahooFinanceData = function(symbol) {
