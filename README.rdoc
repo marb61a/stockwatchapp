@@ -16,4 +16,9 @@ there are different versions of technologies involved
 
 The project itself is developed on Nitrous.io
 
+********** Important **********************************************************
+App is not available as I am moving it from Nitrous to Cloud 9 and have changed
+some settings. I will also be changing more as Angular 2 is on the horizon.
+*******************************************************************************
+
 Are some of the technologies involved
